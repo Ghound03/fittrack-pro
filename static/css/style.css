@@ -49,3 +49,32 @@ body {
     font-size: 1.2rem;
     line-height: 1.6;
 }
+
+.nav-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-section {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.page-section h1 {
+    margin-bottom: 20px;
+}
