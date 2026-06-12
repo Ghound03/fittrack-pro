@@ -6,11 +6,23 @@
 
 <section class="page-section">
 
-    <h1>Goals</h1>
+    <h1>Fitness Goals</h1>
 
-    <p>
-        Set fitness goals and monitor achievements.
-    </p>
+    <div class="card-grid">
+
+        {% for goal in goals %}
+
+        <div class="card">
+
+            <h2>{{ goal.goal }}</h2>
+
+            <p>{{ goal.status }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
 
 </section>
 

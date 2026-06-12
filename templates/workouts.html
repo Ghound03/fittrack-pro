@@ -6,11 +6,31 @@
 
 <section class="page-section">
 
-    <h1>Workouts</h1>
+    <h1>Workout Sessions</h1>
 
-    <p>
-        Track and manage your workout sessions.
-    </p>
+    <div class="card-grid">
+
+        {% for workout in workouts %}
+
+        <div class="card">
+
+            <h2>{{ workout.name }}</h2>
+
+            <p>
+                Duration:
+                {{ workout.duration }} mins
+            </p>
+
+            <p>
+                Calories:
+                {{ workout.calories }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
 
 </section>
 

@@ -6,11 +6,31 @@
 
 <section class="page-section">
 
-    <h1>Progress</h1>
+    <h1>Progress Dashboard</h1>
 
-    <p>
-        View your fitness progress over time.
-    </p>
+    <div class="card-grid">
+
+        <div class="card">
+            <h2>Workouts</h2>
+            <p>{{ stats.workouts_completed }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Current Weight</h2>
+            <p>{{ stats.current_weight }} kg</p>
+        </div>
+
+        <div class="card">
+            <h2>Target Weight</h2>
+            <p>{{ stats.target_weight }} kg</p>
+        </div>
+
+        <div class="card">
+            <h2>Goals Completed</h2>
+            <p>{{ stats.goals_completed }}</p>
+        </div>
+
+    </div>
 
 </section>
 
