@@ -1,6 +1,28 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
+
+workout_list = [
+
+    {
+        "name": "Push Day",
+        "duration": 60,
+        "calories": 450
+    },
+
+    {
+        "name": "Leg Day",
+        "duration": 75,
+        "calories": 650
+    },
+
+    {
+        "name": "Cardio Session",
+        "duration": 45,
+        "calories": 500
+    }
+
+]
 
 
 @app.route("/")
@@ -8,30 +30,24 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/workouts")
+@app.route("/workouts", methods=["GET", "POST"])
 def workouts():
 
-    workout_list = [
+    if request.method == "POST":
 
-        {
-            "name": "Push Day",
-            "duration": 60,
-            "calories": 450
-        },
+        workout_name = request.form.get("name")
 
-        {
-            "name": "Leg Day",
-            "duration": 75,
-            "calories": 650
-        },
+        duration = request.form.get("duration")
 
-        {
-            "name": "Cardio Session",
-            "duration": 45,
-            "calories": 500
-        }
+        calories = request.form.get("calories")
 
-    ]
+        workout_list.append(
+            {
+                "name": workout_name,
+                "duration": duration,
+                "calories": calories
+            }
+        )
 
     return render_template(
         "workouts.html",

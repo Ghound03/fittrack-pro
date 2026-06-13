@@ -8,6 +8,35 @@
 
     <h1>Workout Sessions</h1>
 
+    <form method="POST" class="workout-form">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Workout Name"
+        required
+    >
+
+    <input
+        type="number"
+        name="duration"
+        placeholder="Duration (mins)"
+        required
+    >
+
+    <input
+        type="number"
+        name="calories"
+        placeholder="Calories Burned"
+        required
+    >
+
+    <button type="submit">
+        Add Workout
+    </button>
+
+</form>
+
     <div class="card-grid">
 
         {% for workout in workouts %}
