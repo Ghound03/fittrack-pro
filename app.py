@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect, url_for
 
 app = Flask(__name__)
+
+app.secret_key = "fittrack-secret-key"
 
 workout_list = [
 
@@ -101,9 +103,26 @@ def progress():
     )
 
 
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
-    return render_template("contact.html")
+
+    if request.method == "POST":
+
+        name = request.form.get("name")
+        email = request.form.get("email")
+        message = request.form.get("message")
+
+        flash(
+            f"Thank you {name}, your message has been received!"
+        )
+
+        return redirect(
+            url_for("contact")
+        )
+
+    return render_template(
+        "contact.html"
+    )
 
 
 if __name__ == "__main__":
