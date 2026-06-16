@@ -89,17 +89,18 @@ def goals():
 def progress():
 
     stats = {
-
         "workouts_completed": 48,
         "current_weight": 82,
         "target_weight": 75,
         "goals_completed": 7
-
     }
+
+    weekly_workouts = [3, 4, 2, 5, 4, 6, 5]
 
     return render_template(
         "progress.html",
-        stats=stats
+        stats=stats,
+        weekly_workouts=weekly_workouts
     )
 
 

@@ -37,3 +37,47 @@ document.addEventListener(
 
     }
 );
+
+const workoutChart =
+    document.getElementById("workoutChart");
+
+if (workoutChart) {
+
+    new Chart(
+        workoutChart,
+        {
+            type: "bar",
+
+            data: {
+                labels: [
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu",
+                    "Fri",
+                    "Sat",
+                    "Sun"
+                ],
+
+                datasets: [
+                    {
+                        label: "Workouts Completed",
+                        data: weeklyWorkouts,
+                        backgroundColor: "#101827"
+                    }
+                ]
+            },
+
+            options: {
+                responsive: true,
+
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        }
+    );
+
+}

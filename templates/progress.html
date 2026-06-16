@@ -32,6 +32,18 @@
 
     </div>
 
+    <div class="chart-card">
+
+        <h2>Weekly Workout Activity</h2>
+
+        <canvas id="workoutChart"></canvas>
+
+    </div>
+
 </section>
+
+<script>
+    const weeklyWorkouts = {{ weekly_workouts | tojson }};
+</script>
 
 {% endblock %}
