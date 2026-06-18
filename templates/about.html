@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<section class="page-section">
+
+    <h1>About FitTrack Pro</h1>
+
+    <p>
+        FitTrack Pro is a fitness tracking application
+        developed using Flask, HTML, CSS and JavaScript.
+    </p>
+
+    <p>
+        Users can monitor workouts, goals and
+        overall fitness progress.
+    </p>
+
+</section>
+
+<section class="page-section">
+
+    <h2>BMI Calculator</h2>
+
+    <div class="bmi-container">
+
+        <input
+            type="number"
+            id="weight"
+            placeholder="Weight (kg)"
+        >
+
+        <input
+            type="number"
+            id="height"
+            placeholder="Height (cm)"
+        >
+
+        <button id="calculateBMI">
+            Calculate BMI
+        </button>
+
+        <h3 id="bmiResult"></h3>
+
+    </div>
+
+</section>
+
+{% endblock %}

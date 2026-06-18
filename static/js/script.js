@@ -81,3 +81,60 @@ if (workoutChart) {
     );
 
 }
+
+
+const bmiButton =
+    document.getElementById(
+        "calculateBMI"
+    );
+
+if (bmiButton) {
+
+    bmiButton.addEventListener(
+        "click",
+        function () {
+
+            const weight =
+                parseFloat(
+                    document.getElementById(
+                        "weight"
+                    ).value
+                );
+
+            const height =
+                parseFloat(
+                    document.getElementById(
+                        "height"
+                    ).value
+                ) / 100;
+
+            if (
+                !weight ||
+                !height
+            ) {
+
+                alert(
+                    "Please enter valid values."
+                );
+
+                return;
+
+            }
+
+            const bmi =
+                weight /
+                (
+                    height *
+                    height
+                );
+
+            document.getElementById(
+                "bmiResult"
+            ).innerText =
+                "Your BMI is: " +
+                bmi.toFixed(1);
+
+        }
+    );
+
+}

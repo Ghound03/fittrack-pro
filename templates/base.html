@@ -24,6 +24,12 @@
             </li>
 
             <li>
+    <a href="{{ url_for('about') }}">
+        About
+    </a>
+</li>
+
+            <li>
                 <a href="{{ url_for('workouts') }}">Workouts</a>
             </li>
 
@@ -64,6 +70,15 @@
     <main>
         {% block content %}{% endblock %}
     </main>
+
+    <footer class="footer">
+
+    <p>
+        © 2026 FitTrack Pro |
+        Built with Flask
+    </p>
+
+</footer>
     
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
